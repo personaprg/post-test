@@ -4,36 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>로그인 폼 만들기</title>
+
+  <link rel="style" href="style.css" />
 </head>
 <body>
   <div id="root">
     <label for="ID">ID</label>
     <input id="ID" type="text">
+    <br>
     
     <label for="PASS1">PASSWORD</label>
     <input id="PASS1" type="password">
+    <br>
 
     <label for="PASS2">PASSWORD</label>
     <input id="PASS2" type="password">
+    <br>
 
     <label for="EMAIL">EMAIL</label>
     <input id="EMAIL" type="text">
+    <br>
+
   </div>
 
-  <script>
-    ID = document.getElementById("ID");
-    PASS1 = document.getElementById("PASS1");
-    PASS2 = document.getElementById("PASS2");
-    EMAIL = document.getElementById("EMAIL");
-
-
-    if(ID && PASS1 && PASS2 && EMAIL !== ""){
-    }else{
-      alert("값을 입력해주세요");
-    }
-
-
+  <script src="./script.js"></script>
   </script>
 </body>
 </html>
