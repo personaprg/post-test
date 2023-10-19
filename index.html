@@ -9,26 +9,32 @@
   <link rel="style" href="style.css" />
 </head>
 <body>
-  <div id="root">
-    <label for="ID">ID</label>
-    <input id="ID" type="text">
-    <br>
-    
-    <label for="PASS1">PASSWORD</label>
-    <input id="PASS1" type="password">
-    <br>
 
-    <label for="PASS2">PASSWORD</label>
-    <input id="PASS2" type="password">
-    <br>
+  <form action="/info.html" method="POST" >
+    <div id="root">
+      <label for="ID">ID</label>
+      <input id="ID" type="text">
+      <br>
+      
+      <label for="PASS1">PASSWORD</label>
+      <input id="PASS1" type="text">
+      <br>
+  
+      <label for="PASS2">PASSWORD</label>
+      <input id="PASS2" type="text">
+      <br>
+  
+      <label for="EMAIL">EMAIL</label>
+      <input id="EMAIL" type="text">
+      <br>
+  
+      <button type="button" id="signUp">Sign-up</button>
+  
+    </div>
 
-    <label for="EMAIL">EMAIL</label>
-    <input id="EMAIL" type="text">
-    <br>
 
-    <button id="signUp">Sign-up</button>
 
-  </div>
+  </form>
 
   <script src="./script.js"></script>
   </script>
