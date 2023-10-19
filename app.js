@@ -3,15 +3,18 @@ const fs = require('fs');
 // import hyper text
 const http = require('http');
 const queryString = require('querystring');
-const contentType = require('./contentType');
+const contentType = require('./module/contentType');
 
-let main = "./module/index.html"
-let sub = "./module/info.html"
-let style = "./module/style.css"
+let main = "./index.html"
+let sub = "./info.html"
+let style = "./style.css"
+
 
 // createServer 
 let server = http.createServer((req,res)=> {
+  //http 모둘에서 createServer 모듈 사용
   if(req.method === 'GET' && req.url === '/'){
+
     //index.html
     fs.readFile(main, 'utf8', (err, data)=> {
       if(err) {
@@ -32,9 +35,10 @@ let server = http.createServer((req,res)=> {
       };
     }); 
 
+    
 
   } else if (req.method=== 'POST' && req.url === "/info.html"){
-    console.log("POST 요청 완료")
+    console.log("POST 통신 완료")
     let body ='';
     req.on('data', (chunk) =>{
       body += chunk.toString();
@@ -42,12 +46,11 @@ let server = http.createServer((req,res)=> {
 
     req.on('end', () => {
       const parsedBody = queryString.parse(body);
-      const {username, password} = parsedBody;
+      const {username, password ,email} = parsedBody;
 
       // check 
       console.log(`form 입력으로부터 받은 데이터 확인 ->`, parsedBody);
-      console.log(`form 입력으로부터 받은 데이터 확인 ->`, username);
-      console.log(`form 입력으로부터 받은 데이터 확인 ->`, password);
+      console.log(`for :`, email)
     })
     fs.readFile(sub, 'utf8', (err, data)=> {
       if(err) {
