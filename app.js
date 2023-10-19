@@ -2,12 +2,12 @@
 const fs = require('fs');
 // import hyper text
 const http = require('http');
-const contentType = require("contentType");
-
-
+const contentType = require("./contentType.js");
 
 
 let serve = http.createServer((req, res) => {
-  if(req === METHODS)
+  if(req.method === "GET" && req.url === "/index.html"){
 
+
+  }
 });
