@@ -3,7 +3,7 @@ const fs = require('fs');
 // import hyper text
 const http = require('http');
 const queryString = require('querystring');
-const contentType = require('contentType');
+const contentType = require('./contentType');
 
 let main = "./index.html"
 let sub = "./info.html"
@@ -20,6 +20,7 @@ let server = http.createServer((req,res)=> {
       };
     });  
   } else if (req.method=== 'POST' && req.url === "/info.html"){
+    console.log("POST 요청 완료")
     let body ='';
     req.on('data', (chunk) =>{
       body += chunk.toString();
@@ -38,6 +39,7 @@ let server = http.createServer((req,res)=> {
       if(err) {
         console.log(err);
       } else {
+        
         res.writeHead(200, contentType)
         res.end(data)
       }
